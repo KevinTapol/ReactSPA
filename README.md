@@ -43,3 +43,5 @@ The goal of this repo is to refresh interview questions and prepare for React 19
     }`
 
 *You can also declare global classes inside such as a grid class as follows*
+
+`grid`
