@@ -1,5 +1,5 @@
 # Travsery Media's React 2024
-<!-- 39:48 -->
+<!-- 1:26:30 -->
 
 The goal of this repo is to refresh interview questions and prepare for React 19.
 
@@ -48,3 +48,6 @@ The goal of this repo is to refresh interview questions and prepare for React 19
 `gridTemplateColumns: {`
         `"70/30": '70% 28%',`
       `},`
+
+
+npm i react-router-dom react-icons
