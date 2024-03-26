@@ -49,5 +49,5 @@ The goal of this repo is to refresh interview questions and prepare for React 19
         `"70/30": '70% 28%',`
       `},`
 
-
+***install the following to handle routes on index for element routing or path for url / routing. React icons are used to replace font awesome and materialize icons.***
 npm i react-router-dom react-icons
