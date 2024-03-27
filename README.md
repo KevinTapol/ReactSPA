@@ -51,3 +51,7 @@ The goal of this repo is to refresh interview questions and prepare for React 19
 
 ***install the following to handle routes on index for element routing or path for url / routing. React icons are used to replace font awesome and materialize icons.***
 npm i react-router-dom react-icons
+
+- props aka attributes
+
+- default props set in the destructured arguments of the component example at 48:15
