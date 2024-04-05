@@ -66,4 +66,18 @@ consider adding the Extension Console Ninja seen at 58:19
 
 *The difference between Link and NavLink is that with NavLink you can add a class to the active link.*
 
-*At time stamp 1:43:31 Brad is switching from the front end jobs.json array for front end data to an api called npmjs.com/package/json-server*
+*At time stamp 1:43:31 Brad is switching from the front end jobs.json array for front end data to an api called npmjs.com/package/json-server. This allows us to create a frontend json file, hit up the backend mock api of our desired structure and make changes based on CRUD HTTPS methods. To install json-server with a dev dependency, type the following*
+- npm i -D json-server
+
+*To run the mock backend server, go into package.json and add the follow to "scripts": {}*
+"server": "json-server --watch src/jobs.json --port 8000"
+
+*This will create a server on 8000 using the jobs.json where the object key of jobs value is an array of objects. Now if we type in the terminal npm run server, we will have an endpoint http://localhost:8000/jobs that we can click on to see our object with a value of an array of objects. You can even do http://localhost:8000/jobs/1 to grab the object with the id of 1*
+
+*What this means is that instead of building a REST API with Express or Django etc to test front end functionality, we can instead simply use json-server for full CRUD REST API calls! Thank you computer overlords!*
+
+*There is a library of preset spinner components. https://www.davidhu.io/react-spinners/*
+npm i react-spinners
+
+2:00:00
+*To add a proxy for the json-server, go to your vite.config.js*
