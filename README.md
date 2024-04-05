@@ -49,7 +49,7 @@ The goal of this repo is to refresh interview questions and prepare for React 19
         `"70/30": '70% 28%',`
       `},`
 
-***install the following to handle routes on index for element routing or path for url / routing. React icons are used to replace font awesome and materialize icons.***
+***install the following to handle routes on index for element routing or path for url / routing. React icons are used to replace font awesome and material icons.***
 npm i react-router-dom react-icons
 
 - props aka attributes
@@ -57,3 +57,13 @@ npm i react-router-dom react-icons
 - default props set in the destructured arguments of the component example at 48:15
 
 <a target="_blank" href="https://www.youtube.com/watch?v=wIyHSOugGGw&ab_channel=CodeBootcamp">Click here for Code Bootcamps Youtube video on **Every React concept short description**</a>
+
+is you could be learning what react-toastify done had is? Deep thoughts by my previous Sous Chef Robin
+
+consider adding the Extension Console Ninja seen at 58:19
+
+*The reason we use Link tags instead of anchor tags is because anchor tags will do a full page refresh while Link tags do not. The anchor tag onClick refresh can be seen in the title with the favicon.*
+
+*The difference between Link and NavLink is that with NavLink you can add a class to the active link.*
+
+*At time stamp 1:43:31 Brad is switching from the front end jobs.json array for front end data to an api called npmjs.com/package/json-server*

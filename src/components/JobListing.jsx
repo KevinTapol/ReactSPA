@@ -5,9 +5,11 @@ import { Link } from 'react-router-dom';
 const JobListing = ({ job }) => {
   const [showFullDescription, setShowFullDescription] = useState(false);
 
+  // declaring a mutable variable and assigning it equal to job.description to later reassign
   let description = job.description;
 
   if (!showFullDescription) {
+    // reassigning the jobs.description to a shorter string of 90 characters and concatenating an ellipsis aka ...
     description = description.substring(0, 90) + '...';
   }
 
@@ -18,10 +20,11 @@ const JobListing = ({ job }) => {
           <div className='text-gray-600 my-2'>{job.type}</div>
           <h3 className='text-xl font-bold'>{job.title}</h3>
         </div>
-
+        {/* passing in the description variable based on boolean useState hook instead of the jobs.description */}
         <div className='mb-5'>{description}</div>
 
         <button
+        // The event listener must be as a function and that function as best practices is to have another function changing the state. Some prefer to set directly to false or true, but best practices is to take the current state and set it to not current state.
           onClick={() => setShowFullDescription((prevState) => !prevState)}
           className='text-indigo-500 mb-5 hover:text-indigo-600'
         >
