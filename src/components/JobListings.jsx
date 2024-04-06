@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import JobListing from './JobListing';
 import Spinner from './Spinner';
+// Initially the project used a single front end file of jobs.json but then switched to json-server mock REST API. Time stamp 1:43:20 https://www.youtube.com/watch?v=LDB4uaJ87e0&t=840s&ab_channel=TraversyMedia
 // import jobs from '../jobs.json'
 
 const JobListings = ({ isHome = false }) => {
@@ -10,6 +11,7 @@ const JobListings = ({ isHome = false }) => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // Data fetching using useEffect() which is a fetch on render vs React suspense which allows a render while fetching with a fall back ui like a spinner. React Query 3rd party library etc. React 19 has the new hook to fetch data using useHook().
   // this allows our component to use side effect of grabbing our state
   // useEffect( function, dependency array) 
   useEffect(() => {
@@ -18,8 +20,9 @@ const JobListings = ({ isHome = false }) => {
       const apiUrl = isHome ? '/api/jobs?_limit=3' : '/api/jobs';
 
       /*
+      This entire block is being changed in vite.config.js by creating a proxy where 'http://localhost:8000' is being replaced with '/api'.
       try {
-        const res = await fetch('http://localhost:800/jobs');
+        const res = await fetch('http://localhost:8000/jobs');
         const data = await res.json();
         setJobs(data)
       }

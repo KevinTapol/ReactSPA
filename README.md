@@ -1,5 +1,4 @@
 # Travsery Media's React 2024
-<!-- 57:01 -->
 
 The goal of this repo is to refresh interview questions and prepare for React 19.
 
@@ -81,3 +80,16 @@ npm i react-spinners
 
 2:00:00
 *To add a proxy for the json-server, go to your vite.config.js*
+inside the server object add
+proxy: {
+  '/api': {
+    target: 'http://localhost:8000',
+    changeOrigin: true,
+    rewrite: (path) => path.replace(/^\/api/, ''),
+  }
+}
+
+*what this does is replace the path 'https://localhost:8000' with '/api'*
+Example 'https://localhost:8000/jobs' will be the same as '/api/jobs'
+
+*To change the localhost port, you must go to vite.config.js*
