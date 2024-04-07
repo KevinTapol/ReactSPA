@@ -1,4 +1,5 @@
 # Travsery Media's React 2024
+<!-- 2:16:33 -->
 
 The goal of this repo is to refresh interview questions and prepare for React 19.
 
@@ -93,3 +94,6 @@ proxy: {
 Example 'https://localhost:8000/jobs' will be the same as '/api/jobs'
 
 *To change the localhost port, you must go to vite.config.js*
+
+2:47:21
+- npm i react-toastify
