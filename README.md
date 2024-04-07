@@ -96,4 +96,5 @@ Example 'https://localhost:8000/jobs' will be the same as '/api/jobs'
 *To change the localhost port, you must go to vite.config.js*
 
 2:47:21
+toastify is a pop up alert status that has a position absolute in the top right corner 
 - npm i react-toastify

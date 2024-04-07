@@ -1,10 +1,9 @@
+// to access the data loader function, we must import it from react-router-dom
 import { useParams, useLoaderData, useNavigate } from 'react-router-dom';
 import { FaArrowLeft, FaMapMarker } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 // import { useState, useEffect } from 'react';
-// to access the data loader function, we must import it from react-router-dom
-import { useParams, useLoaderData } from 'react-router-dom'
 // import Spinner from '../components/Spinner';
 
 
@@ -159,6 +158,6 @@ const jobLoader = async ({ params }) => {
   return data;
 };
 
-// export JobPage
-// Here we are exporting Jobpage ad default but also exporting the function jobLoader which allows us to also import jobLoader elsewhere.
+// export default JobPage
+// Here we are exporting Jobpage ad default but also exporting the function jobLoader which allows us to also import jobLoader into other components.
 export { JobPage as default, jobLoader };

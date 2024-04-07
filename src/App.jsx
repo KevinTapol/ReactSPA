@@ -14,7 +14,7 @@ const router = createBrowserRouter(
       <Route index element={ <Homepage /> } />
       <Route path='/jobs' element={ <JobsPage /> } />
       {/* :id represents dynamic id of current Job being passed in as the variable id being targeted on event */}
-      <Route path='/jobs/:id' element={ <JobPage loader={jobLoader} /> } />
+      <Route path='/jobs/:id' element={ <JobPage /> } loader={jobLoader} />
       {/* path="*" means any route not defined will route to the given element which in this case is NotFoundPage component. */}
       <Route path='*' element={ <NotFoundPage /> } />
     </Route>
