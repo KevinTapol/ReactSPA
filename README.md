@@ -1,5 +1,5 @@
 # Travsery Media's React 2024
-<!-- 2:16:33 -->
+<!-- 2:22:12 -->
 
 The goal of this repo is to refresh interview questions and prepare for React 19.
 
@@ -60,7 +60,7 @@ npm i react-router-dom react-icons
 
 is you could be learning what react-toastify done had is? Deep thoughts by my previous Sous Chef Robin
 
-consider adding the Extension Console Ninja seen at 58:19
+consider adding the Extension Console Ninja seen at 58:19 and multiple cursor case preserve at 2:28:03
 
 *The reason we use Link tags instead of anchor tags is because anchor tags will do a full page refresh while Link tags do not. The anchor tag onClick refresh can be seen in the title with the favicon.*
 
@@ -98,3 +98,6 @@ Example 'https://localhost:8000/jobs' will be the same as '/api/jobs'
 2:47:21
 toastify is a pop up alert status that has a position absolute in the top right corner 
 - npm i react-toastify
+
+
+*Sidenote to check for loader backend fail, do not run the server npm run server but do run the frontend npm run dev. This way you can check for loading animations for fail api responses etc.*

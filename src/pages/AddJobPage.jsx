@@ -13,6 +13,23 @@ const AddJobPage = ({ addJobSubmit }) => {
   const [contactEmail, setContactEmail] = useState('');
   const [contactPhone, setContactPhone] = useState('');
 
+  /*
+The reason for this block of code from my sweet_treat_vixen website, is that I am considering changing the multiple lines of useState() above to a single object below. To do this, I would also have to change the value and the onChange to an object key value pair and iterate through the object for onChange.
+
+  const [formData, setFormData] = useState({
+    Name: "",
+    Phone: "",
+    Email: "",
+    Subject: "",
+    Message: "",
+  });
+
+
+  inside each input I would have to change the value and the onChange to 
+    onChange={(e) => setFormData({ ...formData, Name: e.target.value })}
+    value={formData.Name}
+  */
+
   const navigate = useNavigate();
 
   const submitForm = (e) => {
