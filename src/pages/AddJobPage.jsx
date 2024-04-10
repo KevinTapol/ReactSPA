@@ -17,17 +17,44 @@ const AddJobPage = ({ addJobSubmit }) => {
 The reason for this block of code from my sweet_treat_vixen website, is that I am considering changing the multiple lines of useState() above to a single object below. To do this, I would also have to change the value and the onChange to an object key value pair and iterate through the object for onChange.
 
   const [formData, setFormData] = useState({
-    Name: "",
-    Phone: "",
-    Email: "",
-    Subject: "",
-    Message: "",
+    Title: "",
+    Type: "Full-Time",
+    Location: "",
+    Description: "",
+    Salary: "Under $50K",
+    CompanyName: "",
+    CompanyDescription: "",
+    ContactEmail: "",
+    ContactPhone: "",
   });
 
 
   inside each input I would have to change the value and the onChange to 
     onChange={(e) => setFormData({ ...formData, Name: e.target.value })}
     value={formData.Name}
+
+
+  or instead of using the same onChange per each value above, I could create a function being executed on onChange seen below and change the value equal to the key value pair ex Type input would need
+  <label
+    htmlFor="typeInput"
+  >
+   Type 
+  </label>
+  <input 
+    id = "typeInput"
+    value = formData.Type 
+    name = Type
+    onChange = {handleChange}
+    type = "text"
+    placeholder="Type"
+  />   
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevData => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
   */
 
   const navigate = useNavigate();
@@ -42,7 +69,7 @@ The reason for this block of code from my sweet_treat_vixen website, is that I a
       description,
       salary,
       company: {
-        name: companyName,
+        name: companyName, 
         description: companyDescription,
         contactEmail,
         contactPhone,
