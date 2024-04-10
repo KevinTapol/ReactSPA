@@ -1,5 +1,5 @@
 # Travsery Media's React 2024
-<!-- 2:22:12 -->
+<!-- 2:41:48 -->
 
 The goal of this repo is to refresh interview questions and prepare for React 19.
 
@@ -101,3 +101,6 @@ toastify is a pop up alert status that has a position absolute in the top right 
 
 
 *Sidenote to check for loader backend fail, do not run the server npm run server but do run the frontend npm run dev. This way you can check for loading animations for fail api responses etc.*
+
+*2:35:35 Reason why to not have the POST request crud in App.jsx instead of AddJobPage.jsx*
+*Delete 2:41:48*

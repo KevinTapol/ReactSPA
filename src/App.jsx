@@ -8,24 +8,39 @@ import NotFoundPage from './pages/NotFoundPage'
 import JobPage, { jobLoader } from './pages/JobPage'
 import AddJobPage from './pages/AddJobPage'
 
-const router = createBrowserRouter(
-  // createRoutesFromElements(<Route path='/about' element={<h1>Testing Route</h1>} />)
-  createRoutesFromElements(
-    <Route path='/' element={ <MainLayout /> } >
-      <Route index element={ <Homepage /> } />
-      <Route path='/jobs' element={ <JobsPage /> } />
-      <Route path='/add-job' element={ <AddJobPage /> } />
-      {/* :id represents dynamic id of current Job being passed in as the variable id being targeted on event */}
-      <Route path='/jobs/:id' element={ <JobPage /> } loader={jobLoader} />
-      {/* path="*" means any route not defined will route to the given element which in this case is NotFoundPage component. */}
-      <Route path='*' element={ <NotFoundPage /> } />
-    </Route>
-  )
-)
-
 // if you want a url /about you need to use path='/about' 
 // if you want to use a page then you need to use index=
 const App = () => {
+
+  const addJob = async (newJob) => {
+    const res = await fetch('/api/jobs', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newJob)
+    })
+    // When we return from this function we get the redirect from AddJobPage.jsx form function onSubmit called submitForm.
+    return
+  }
+
+  const router = createBrowserRouter(
+    // createRoutesFromElements(<Route path='/about' element={<h1>Testing Route</h1>} />)
+    createRoutesFromElements(
+      <Route path='/' element={ <MainLayout /> } >
+        <Route index element={ <Homepage /> } />
+        <Route path='/jobs' element={ <JobsPage /> } />
+        {/* calling the function addJob through the prop of addJobSubmit in the AddJobPage component */}
+        <Route path='/add-job' element={ <AddJobPage addJobSubmit={addJob} /> } />
+        <Route path='/edit-job/:id' element={ <EditJobPage updateJobSubmit={updateJob} /> } loader={jobLoader} />
+        {/* :id represents dynamic id of current Job being passed in as the variable id being targeted on event */}
+        <Route path='/jobs/:id' element={ <JobPage deleteJob={deleteJob} /> } loader={jobLoader} />
+        {/* path="*" means any route not defined will route to the given element which in this case is NotFoundPage component. */}
+        <Route path='*' element={ <NotFoundPage /> } />
+      </Route>
+    )
+  )
+
   return (
     <RouterProvider router={router} />
   )

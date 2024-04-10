@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
+
+// passing in the function addJobSubmit as a prop so that we can call it to run in App.jsx
 const AddJobPage = ({ addJobSubmit }) => {
   const [title, setTitle] = useState('');
   const [type, setType] = useState('Full-Time');
@@ -60,8 +62,10 @@ The reason for this block of code from my sweet_treat_vixen website, is that I a
   const navigate = useNavigate();
 
   const submitForm = (e) => {
+    // prevent default behavior
     e.preventDefault();
 
+    // constructing object and if the key value pairs are the same we don't need to list the value ex title: title, is the same as title,
     const newJob = {
       title,
       type,
@@ -75,11 +79,11 @@ The reason for this block of code from my sweet_treat_vixen website, is that I a
         contactPhone,
       },
     };
-
+    // console.log(newJob)
     addJobSubmit(newJob);
 
     toast.success('Job Added Successfully');
-
+    // using the useNavigate() to redirect to the jobs page after submitting a newly added job
     return navigate('/jobs');
   };
 
