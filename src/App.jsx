@@ -32,9 +32,10 @@ const App = () => {
         <Route path='/jobs' element={ <JobsPage /> } />
         {/* calling the function addJob through the prop of addJobSubmit in the AddJobPage component */}
         <Route path='/add-job' element={ <AddJobPage addJobSubmit={addJob} /> } />
-        <Route path='/edit-job/:id' element={ <EditJobPage updateJobSubmit={updateJob} /> } loader={jobLoader} />
+        {/* <Route path='/edit-job/:id' element={ <EditJobPage updateJobSubmit={updateJob} /> } loader={jobLoader} /> */}
         {/* :id represents dynamic id of current Job being passed in as the variable id being targeted on event */}
-        <Route path='/jobs/:id' element={ <JobPage deleteJob={deleteJob} /> } loader={jobLoader} />
+        {/* <Route path='/jobs/:id' element={ <JobPage deleteJob={deleteJob} /> } loader={jobLoader} /> */}
+        <Route path='/jobs/:id' element={ <JobPage /> } loader={jobLoader} />
         {/* path="*" means any route not defined will route to the given element which in this case is NotFoundPage component. */}
         <Route path='*' element={ <NotFoundPage /> } />
       </Route>
