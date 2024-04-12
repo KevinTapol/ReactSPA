@@ -12,6 +12,8 @@ import AddJobPage from './pages/AddJobPage'
 // if you want to use a page then you need to use index=
 const App = () => {
 
+  // request function in the app component but why?
+  // AddJobPage.jsx contains the component where this request function is being passed in as a prop.
   const addJob = async (newJob) => {
     const res = await fetch('/api/jobs', {
       method: 'POST',
@@ -24,6 +26,11 @@ const App = () => {
     return
   }
 
+  // JobPage.jsx contains the component where this request function is being passed in as a prop.
+  const deleteJob = async (id) => {
+    console.log('delete', id)
+  }
+
   const router = createBrowserRouter(
     // createRoutesFromElements(<Route path='/about' element={<h1>Testing Route</h1>} />)
     createRoutesFromElements(
@@ -34,8 +41,8 @@ const App = () => {
         <Route path='/add-job' element={ <AddJobPage addJobSubmit={addJob} /> } />
         {/* <Route path='/edit-job/:id' element={ <EditJobPage updateJobSubmit={updateJob} /> } loader={jobLoader} /> */}
         {/* :id represents dynamic id of current Job being passed in as the variable id being targeted on event */}
-        {/* <Route path='/jobs/:id' element={ <JobPage deleteJob={deleteJob} /> } loader={jobLoader} /> */}
-        <Route path='/jobs/:id' element={ <JobPage /> } loader={jobLoader} />
+        <Route path='/jobs/:id' element={ <JobPage deleteJob={deleteJob} /> } loader={jobLoader} />
+        {/* <Route path='/jobs/:id' element={ <JobPage /> } loader={jobLoader} /> */}
         {/* path="*" means any route not defined will route to the given element which in this case is NotFoundPage component. */}
         <Route path='*' element={ <NotFoundPage /> } />
       </Route>

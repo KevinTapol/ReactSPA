@@ -44,17 +44,18 @@ const JobPage = ({ deleteJob }) => {
     // useLoaderData hook being used to grab the dynamic job id to eventually fetch the data 
   const job = useLoaderData();
 
+  // onClick function being called on the delete button with a confirmation window
   const onDeleteClick = (jobId) => {
     const confirm = window.confirm(
       'Are you sure you want to delete this listing?'
     );
 
     if (!confirm) return;
-
+    // else delete the job 
     deleteJob(jobId);
-
+    // pop up job deleted
     toast.success('Job deleted successfully');
-
+    // redirect to the jobs page
     navigate('/jobs');
   };
 
