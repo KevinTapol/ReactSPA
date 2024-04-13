@@ -104,3 +104,8 @@ toastify is a pop up alert status that has a position absolute in the top right 
 
 *2:35:35 Reason why to not have the POST request crud in App.jsx instead of AddJobPage.jsx*
 *Using useLoaderData() from react-router-dom over useEffect() allows us to have dry code by writing the frontend fetch request once in JobPage.jsx, export it from JobPage.jsx, import it to other components such as App.jsx and pass it in as a prop inside the Route Component*
+
+
+*Successfully abstracted Backend request functions to BackendRequests.jsx and imported them into App.jsx for POST, DELETE and PUT. The GET request is the updateDataLoader() in JobPage.jsx that is being exported as jobLoader and imported to App.jsx as the prop loader into the component of Route from react-router-dom.*
+
+*Should I also abstract the get request to the BackendRequest.jsx?*
