@@ -81,7 +81,7 @@ The reason for this block of code from my sweet_treat_vixen website, is that I a
     };
     // console.log(newJob)
     addJobSubmit(newJob);
-
+    
     toast.success('Job Added Successfully');
     // using the useNavigate() to redirect to the jobs page after submitting a newly added job
     return navigate('/jobs');

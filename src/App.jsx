@@ -13,6 +13,7 @@ import AddJobPage from './pages/AddJobPage'
 const App = () => {
 
   // request function in the app component but why?
+  // I think that the reason Brad is putting the request CRUD functions in the App.jsx is to demonstrate passing in a function as a prop into a component that has a destructured prop.
   // AddJobPage.jsx contains the component where this request function is being passed in as a prop.
   const addJob = async (newJob) => {
     const res = await fetch('/api/jobs', {
@@ -26,9 +27,13 @@ const App = () => {
     return
   }
 
-  // JobPage.jsx contains the component where this request function is being passed in as a prop.
+  // JobPage.jsx contains the component where this request function is being passed in as a prop. You can put the toast notification here but instead we will put it in the JobPage.jsx that contains the destructured prop. Headers and body not needed because we are only deleting data.
   const deleteJob = async (id) => {
-    console.log('delete', id)
+    // console.log('delete', id)
+    const res = await fetch(`/api/jobs/${id}`, {
+      method: 'DELETE'
+    })
+    return
   }
 
   const router = createBrowserRouter(
