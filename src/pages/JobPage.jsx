@@ -6,9 +6,14 @@ import { toast } from 'react-toastify';
 // import { useState, useEffect } from 'react';
 // import Spinner from '../components/Spinner';
 
-
-
+// In the video, Brad has this jobLoader function at the end and outside of the JobPage component, but I prefer to have it at the top because it is taking the place of the useEffect() hook. React hooks are supposed to be at the top level and inside of the component shown below.
 // Global state data loader being passed into other components.
+// This data loader (a feature from react-router) is taking the place of useEffect() which is fetching data on render.
+const jobLoader = async ({ params }) => {
+  const res = await fetch(`/api/jobs/${params.id}`);
+  const data = await res.json();
+  return data;
+};
 
 const JobPage = ({ deleteJob }) => {
 
@@ -151,14 +156,6 @@ const JobPage = ({ deleteJob }) => {
     </>
   );
 };
-
-// This data loader (a feature from react-router) is taking the place of useEffect() which is fetching data on render.
-const jobLoader = async ({ params }) => {
-  const res = await fetch(`/api/jobs/${params.id}`);
-  const data = await res.json();
-  return data;
-};
-
 // export default JobPage
 // Here we are exporting Jobpage ad default but also exporting the function jobLoader which allows us to also import jobLoader into other components.
 export { JobPage as default, jobLoader };

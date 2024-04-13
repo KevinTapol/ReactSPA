@@ -103,4 +103,4 @@ toastify is a pop up alert status that has a position absolute in the top right 
 *Sidenote to check for loader backend fail, do not run the server npm run server but do run the frontend npm run dev. This way you can check for loading animations for fail api responses etc.*
 
 *2:35:35 Reason why to not have the POST request crud in App.jsx instead of AddJobPage.jsx*
-*Delete 2:45:50*
+*Using useLoaderData() from react-router-dom over useEffect() allows us to have dry code by writing the frontend fetch request once in JobPage.jsx, export it from JobPage.jsx, import it to other components such as App.jsx and pass it in as a prop inside the Route Component*

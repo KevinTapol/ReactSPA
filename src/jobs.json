@@ -85,17 +85,17 @@
       }
     },
     {
-      "id": "404c",
-      "title": "testAdd",
+      "id": "b6a1",
+      "title": "Fry Cook",
       "type": "Full-Time",
-      "location": "myhouse",
-      "description": "testing adding a job",
+      "location": "Dante's Inferno",
+      "description": "Wear at least 5 hats for the first 2 weeks then add more due to performance punishment.",
       "salary": "Under $50K",
       "company": {
-        "name": "nivek",
-        "description": "experiencedUnexperienced",
-        "contactEmail": "add@mail.com",
-        "contactPhone": "5555555555"
+        "name": "Soul Stealers",
+        "description": "We steal men's souls and make them our own.",
+        "contactEmail": "SoulStealers@mail.com",
+        "contactPhone": "(555) 555-5555"
       }
     }
   ]

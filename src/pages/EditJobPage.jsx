@@ -3,6 +3,8 @@ import { useParams, useLoaderData, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const EditJobPage = ({ updateJobSubmit }) => {
+  // useLoaderData() is used to access the data (similar to useEffect()) from jobLoader which is exported from JobPage.jsx, imported from App.jsx and passed in as a prop to the prop loader in the Route component for the edit-job route.
+  // useLoaderData() is also being put above the useState() hook so that we can add the defaults from it to the useState() hooks below it.
   const job = useLoaderData();
   const [title, setTitle] = useState(job.title);
   const [type, setType] = useState(job.type);
@@ -16,7 +18,9 @@ const EditJobPage = ({ updateJobSubmit }) => {
   const [contactEmail, setContactEmail] = useState(job.company.contactEmail);
   const [contactPhone, setContactPhone] = useState(job.company.contactPhone);
 
+  // initializing useNavigate() hook for routing
   const navigate = useNavigate();
+  // We need useParams() to grab the individual job by id and shove it into the object updatedJob
   const { id } = useParams();
 
   const submitForm = (e) => {
