@@ -59,6 +59,7 @@ const App = () => {
     // createRoutesFromElements(<Route path='/about' element={<h1>Testing Route</h1>} />)
     createRoutesFromElements(
       <Route path='/' element={ <MainLayout /> } >
+        {/* here we are keeping the same path of '/' but also including the component Homepage using index */}
         <Route index element={ <Homepage /> } />
         <Route path='/jobs' element={ <JobsPage /> } />
         {/* calling the function addJob through the prop of addJobSubmit in the AddJobPage component */}

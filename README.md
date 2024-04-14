@@ -43,7 +43,7 @@ The goal of this repo is to refresh interview questions and prepare for React 19
         sans: ['Roboto', 'sans-serif']
     }`
 
-*You can also declare global classes inside such as a grid class as follows*
+*You can also declare global classes inside such as a grid class as follows which is being called in the JobPage.jsx*
 
 `gridTemplateColumns: {`
         `"70/30": '70% 28%',`
@@ -93,7 +93,25 @@ proxy: {
 *what this does is replace the path 'https://localhost:8000' with '/api'*
 Example 'https://localhost:8000/jobs' will be the same as '/api/jobs'
 
-*To change the localhost port, you must go to vite.config.js*
+*To change the localhost port, you must go to vite.config.js. So, for a recap the backend request server is setup as the proxy target and the frontend requests functionality is setup as the port*
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vitejs.dev/config/  
+export default defineConfig({  
+  plugins: [react()],  
+  server: {  
+    port: 3000,  
+    proxy: {  
+      '/api': {  
+        target: 'http://localhost:8000',  
+        changeOrigin: true,  
+        rewrite: (path) => path.replace(/^\/api/, ''),  
+      },  
+    },  
+  },  
+});  
+
 
 2:47:21
 toastify is a pop up alert status that has a position absolute in the top right corner 

@@ -3,6 +3,25 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 
+// const dataArray = {
+//   "jobs": [
+//     {
+//       "id": "",
+//       "title": "",
+//       "type": "",
+//       "location": "",
+//       "description": "",
+//       "salary": "",
+//       "company": {
+//         "name": "",
+//         "description": "",
+//         "contactEmail": "",
+//         "contactPhone": ""
+//       }
+//     }
+//   ]
+// }
+
 // passing in the function addJobSubmit as a prop so that we can call it to run in App.jsx
 const AddJobPage = ({ addJobSubmit }) => {
   const [title, setTitle] = useState('');
@@ -57,6 +76,17 @@ The reason for this block of code from my sweet_treat_vixen website, is that I a
       [name]: value
     }));
   };
+  const newJob = {
+    title: formData.title,
+    type: formData.type,
+    location: formData.location,
+    description: formData.description,
+    salary: formData.salary,
+    companyName: formData.company.name,
+    companyDescription: formData.company.description,
+    contactEmail: formData.company.contactEmail,
+    contactPhone: formData.company.contactPhone,
+  }
   */
 
   const navigate = useNavigate();
